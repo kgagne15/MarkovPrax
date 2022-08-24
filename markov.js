@@ -32,7 +32,7 @@ class MarkovMachine {
       else {
         chains.set(word, [nextWord])
       }
-      
+      this.chains = chains;
     }
   }
   //what is static?
@@ -45,7 +45,7 @@ class MarkovMachine {
 
   makeText(numWords = 100) {
     //pick a random key to begin
-    let keys = Array.from(this.chains.keys())
+    let keys = Array.from(this.chains.keys());
     let key = MarkovMachine.choice(keys);
     let out = [];
 
@@ -57,6 +57,11 @@ class MarkovMachine {
     //returns output with words joined on space
     return out.join(" ");
   }
+
+
 }
 
-module.exports = { MarkovMachine };
+module.exports = { MarkovMachine, };
+
+
+
